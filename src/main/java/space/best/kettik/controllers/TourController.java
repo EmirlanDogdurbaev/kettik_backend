@@ -38,6 +38,7 @@ public class TourController {
     public List<TourModel> getToursSortedByCategory(@RequestParam("category") TourModel.Category category) {
         return tourService.getToursSortedByCategory(category);
     }
+
     //    search in all info
     @GetMapping("/search")
     public List<TourModel> searchTours(@RequestParam("keyword") String keyword) {
