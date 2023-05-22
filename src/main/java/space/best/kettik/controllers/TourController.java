@@ -1,21 +1,27 @@
 package space.best.kettik.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import space.best.kettik.dto.TourRequest;
 import space.best.kettik.models.TourModel;
+import space.best.kettik.servises.CloudinaryService;
 import space.best.kettik.servises.TourService;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3000/")
+
 @RestController
 @RequestMapping("/tours")
+@CrossOrigin(origins = "http://localhost:3000/")
 public class TourController {
     private final TourService tourService;
+
 
     @Autowired
     public TourController(TourService tourService) {
         this.tourService = tourService;
+
     }
 
     @GetMapping
@@ -23,9 +29,14 @@ public class TourController {
         return tourService.getAllTours();
     }
 
-    @PostMapping
-    public TourModel createTour(@RequestBody TourModel tourModel) {
-        return tourService.createTour(tourModel);
+    @GetMapping("/{id}") // New method to get tours by ID
+    public TourModel getTourById(@PathVariable("id") Long id) {
+        return tourService.getTourById(id);
+    }
+
+    @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public TourModel createTour(@ModelAttribute TourRequest tourRequest) {
+        return tourService.createTour(tourRequest);
     }
 
     @GetMapping("/sorted")
