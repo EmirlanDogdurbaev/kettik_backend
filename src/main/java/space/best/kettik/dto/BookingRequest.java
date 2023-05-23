@@ -1,4 +1,4 @@
-package space.best.kettik.models;
+package space.best.kettik.dto;
 
 import lombok.Data;
 import lombok.Getter;
@@ -13,12 +13,8 @@ public class BookingRequest {
     private String name;
     private String email;
     private String phone;
-        private int numberOfPersons;
+    private int numberOfPersons;
     private String tourName;
     private String data;
-
-    // Геттеры и сеттеры
-
-    // Конструкторы
 }
 

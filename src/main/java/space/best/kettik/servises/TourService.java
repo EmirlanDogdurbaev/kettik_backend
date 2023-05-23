@@ -15,8 +15,6 @@ public class TourService {
     private final CloudinaryService cloudinaryService;
 
 
-
-
     @Autowired
     public TourService(TourRepository tourRepository, CloudinaryService cloudinaryService) {
         this.tourRepository = tourRepository;
@@ -30,16 +28,21 @@ public class TourService {
     public TourModel createTour(TourRequest tourRequest) {
         return tourRepository.save(
                 TourModel.builder()
-                .title(tourRequest.title())
-                .miniTitle(tourRequest.miniTitle())
-                .price(tourRequest.price())
-                .priceInclude(tourRequest.priceInclude())
-                .bring(tourRequest.bring())
-                .fullDescription(tourRequest.fullDescription())
-                .day(tourRequest.day())
-                .category(TourModel.Category.valueOf(tourRequest.category()))
-                .image(cloudinaryService.upload(tourRequest.image()))
-                .build());
+                        .title(tourRequest.title())
+                        .miniTitle(tourRequest.miniTitle())
+                        .price(tourRequest.price())
+                        .priceInclude(tourRequest.priceInclude())
+                        .bring(tourRequest.bring())
+                        .fullDescription(tourRequest.fullDescription())
+                        .bringCharacteristics(tourRequest.bringCharacteristics())
+                        .day(tourRequest.day())
+                        .category(TourModel.Category.valueOf(tourRequest.category()))
+                        .image(cloudinaryService.upload(tourRequest.image()))
+                        .image2(cloudinaryService.upload(tourRequest.image2()))
+                        .image3(cloudinaryService.upload(tourRequest.image3()))
+                        .image4(cloudinaryService.upload(tourRequest.image4()))
+
+                        .build());
     }
 
     public TourModel getTourById(Long id) {

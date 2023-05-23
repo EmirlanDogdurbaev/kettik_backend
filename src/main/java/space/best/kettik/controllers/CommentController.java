@@ -10,9 +10,7 @@ import java.util.List;
 @RequestMapping("/api")
 @CrossOrigin(origins = "http://localhost:3000/")
 public class CommentController {
-
     private final CommentService commentService ;
-
     public CommentController(CommentService commentService) {
         this.commentService = commentService;
     }
@@ -22,7 +20,6 @@ public class CommentController {
         List<CommentModels> comments = commentService.getAllComments();
         return ResponseEntity.ok(comments);
     }
-
 
     @PostMapping("/comments")
     public ResponseEntity<CommentModels> addComment(@RequestBody CommentModels comment) {

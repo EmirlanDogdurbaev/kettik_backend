@@ -1,12 +1,11 @@
 package space.best.kettik.servises;
 import org.springframework.stereotype.Service;
 import space.best.kettik.models.Booking;
-import space.best.kettik.models.BookingRequest;
+import space.best.kettik.dto.BookingRequest;
 import space.best.kettik.repos.BookingRepository;
 
 @Service
 public class BookingService {
-
     private final BookingRepository bookingRepository;
 
     public BookingService(BookingRepository bookingRepository) {

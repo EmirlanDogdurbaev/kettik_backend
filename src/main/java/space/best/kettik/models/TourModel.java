@@ -26,16 +26,27 @@ public class TourModel {
     @ElementCollection
     private List<String> priceInclude;
     private String bring;
+    @ElementCollection
+    private List<String> bringCharacteristics;
     private String fullDescription;
-    private int day;
+    private String day;
     @Enumerated(EnumType.STRING)
     private Category category;
     private String image;
+    private String image2;
+    private String image3;
+
+    private String image4;
+
+
 
     public enum Category {
         MULTIDAY("Multiday"),
-        MOUNTAINS("Mountains"),
-        INDIVIDUAL("Individual");
+        CITI("CITI"),
+        DAY("DAY");
+
+
+
 
         private String displayName;
 

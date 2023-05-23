@@ -5,7 +5,6 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import space.best.kettik.dto.TourRequest;
 import space.best.kettik.models.TourModel;
-import space.best.kettik.servises.CloudinaryService;
 import space.best.kettik.servises.TourService;
 
 import java.util.List;
@@ -16,14 +15,10 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000/")
 public class TourController {
     private final TourService tourService;
-
-
     @Autowired
     public TourController(TourService tourService) {
         this.tourService = tourService;
-
     }
-
     @GetMapping
     public List<TourModel> getAllTours() {
         return tourService.getAllTours();
