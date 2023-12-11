@@ -41,7 +41,6 @@ public class TourService {
                         .image2(cloudinaryService.upload(tourRequest.image2()))
                         .image3(cloudinaryService.upload(tourRequest.image3()))
                         .image4(cloudinaryService.upload(tourRequest.image4()))
-
                         .build());
     }
 

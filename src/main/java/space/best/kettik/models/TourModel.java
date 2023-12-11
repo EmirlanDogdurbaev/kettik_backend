@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import nonapi.io.github.classgraph.json.JSONUtils;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -39,14 +40,10 @@ public class TourModel {
     private String image4;
 
 
-
     public enum Category {
         MULTIDAY("Multiday"),
         CITI("CITI"),
         DAY("DAY");
-
-
-
 
         private String displayName;
 
@@ -57,5 +54,6 @@ public class TourModel {
         public String getDisplayName() {
             return displayName;
         }
+
     }
 }

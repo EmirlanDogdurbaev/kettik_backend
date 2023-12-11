@@ -38,7 +38,6 @@ public class TourController {
     public List<TourModel> getSortedTours(@RequestParam("sortBy") String sortBy) {
         return tourService.getSortedTours(sortBy);
     }
-
     //    http://localhost:8081/tours/sortedByCategory?category=MULTIDAY
     @GetMapping("/sortedByCategory")
     public List<TourModel> getToursSortedByCategory(@RequestParam("category") TourModel.Category category) {

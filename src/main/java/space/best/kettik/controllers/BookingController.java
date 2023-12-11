@@ -7,9 +7,10 @@ import space.best.kettik.models.Booking;
 import space.best.kettik.dto.BookingRequest;
 import space.best.kettik.servises.BookingService;
 
-@CrossOrigin(origins = "http://localhost:3000/")
+
 @RestController
-@RequestMapping("/booking")
+@RequestMapping("/bookings")
+@CrossOrigin(origins = "http://localhost:3000/")
 public class BookingController {
     private final BookingService bookingService;
 
